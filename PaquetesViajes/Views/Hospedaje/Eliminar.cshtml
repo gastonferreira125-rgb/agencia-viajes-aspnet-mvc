@@ -1,0 +1,75 @@
+﻿@model EntidadesCompartidas.Hospedaje
+
+<h2>Eliminar Hospedaje</h2>
+
+<p> @ViewBag.Mensaje </p>  
+
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+
+<h3>¿Esta seguro que desea eliminar el hospedaje?</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoInterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoInterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoHospedaje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoHospedaje)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioPorNoche)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioPorNoche)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.CodigoInterno)<!--este campo del form el usuario no lo ve y viaja cuando se dispara el submit-->
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+        </div>
+    }
+</div>

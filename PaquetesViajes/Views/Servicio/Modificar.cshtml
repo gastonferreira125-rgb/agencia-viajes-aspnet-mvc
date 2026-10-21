@@ -1,0 +1,52 @@
+﻿@model EntidadesCompartidas.Servicio
+
+<h2>Modificar Servicio</h2>
+
+<p> @ViewBag.Mensaje </p>  
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumeroOmnibus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.NumeroOmnibus, new { htmlAttributes = new { @class = "form-control" } })<!--es no editable, parte de laclave compuesta de servicio-->
+                @Html.HiddenFor(model => model.NumeroOmnibus)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaHoraPartida, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.FechaHoraPartida, new { htmlAttributes = new { @class = "form-control" } })<!--idem-->
+                @Html.HiddenFor(model => model.FechaHoraPartida)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaHoraLlegada, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaHoraLlegada, new { htmlAttributes = new { @class = "form-control" } })<!--estos si son editables son datos que tiene sentido actualizar-->
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrecioPasajeIndividual, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PrecioPasajeIndividual, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Modificar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

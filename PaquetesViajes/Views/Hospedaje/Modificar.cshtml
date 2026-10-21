@@ -1,0 +1,69 @@
+﻿@model EntidadesCompartidas.Hospedaje
+
+<h2>Modificar</h2>
+
+<p> @ViewBag.Mensaje </p> 
+
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodigoInterno, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.CodigoInterno, new { htmlAttributes = new { @class = "form-control" } })<!--no se puede modificar la pk-->
+                @Html.HiddenFor(model => model.CodigoInterno)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoHospedaje, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TipoHospedaje, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrecioPorNoche, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PrecioPorNoche, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <label class="control-label col-md-2">Estado</label>
+            <div class="col-md-10">
+                @Html.DropDownList("CodigoEstado", (SelectList)ViewBag.ListaEstados, new { @class = "form-control" })<!--dd de estado la unica diferencia con agregar es que el dd tiene que abrir ya con el estado actual marcado-->
+            </div><!-- si pero para que el estado actual aparezca el controlador de hospedaje el get de modificar tiene que armar el slectlist con el valor ya elegido hay que correjir el controlador-->
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Modificar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

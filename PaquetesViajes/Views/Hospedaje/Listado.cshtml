@@ -1,0 +1,56 @@
+﻿@model IEnumerable<EntidadesCompartidas.Hospedaje>
+
+<h2>Listado Hospedajes</h2>
+
+<p> @ViewBag.Mensaje </p>  
+
+<p> @Html.ActionLink("Nuevo", "Agregar") </p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoInterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoHospedaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioPorNoche)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (EntidadesCompartidas.Hospedaje unH in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => unH.CodigoInterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unH.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unH.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unH.TipoHospedaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unH.PrecioPorNoche)
+            </td>
+            <td>
+                @Html.ActionLink("Modificar", "Modificar", new { pCodigoInterno = unH.CodigoInterno })
+                @Html.ActionLink("Consultar", "Consultar", new { pCodigoInterno = unH.CodigoInterno })
+                @Html.ActionLink("Eliminar", "Eliminar", new { pCodigoInterno = unH.CodigoInterno })
+            </td>
+        </tr>
+    }
+
+</table>

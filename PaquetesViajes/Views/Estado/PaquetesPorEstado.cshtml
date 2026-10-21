@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EntidadesCompartidas.PaqueteViaje>
+
+
+<h2>Paquetes de Viaje del Estado</h2>
+
+<p> @ViewBag.Mensaje </p>
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadDias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioIndividual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioDoble)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioTriple)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (EntidadesCompartidas.PaqueteViaje unP in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => unP.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unP.CantidadDias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unP.PrecioIndividual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unP.PrecioDoble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unP.PrecioTriple)
+            </td>
+            <td>
+                @Html.ActionLink("Ver Completo", "Consultar", "PaqueteViaje", new { pIdPaquete = unP.Codigo }, null)
+                <!--le digo el nomb xq esta en el controlado de paqueteviaje-->
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,69 @@
+﻿@model EntidadesCompartidas.Estado
+
+<h2>Agregar Estado</h2>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Mensaje
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <h4>Estado</h4>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodigoEstado, "Código",
+                htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CodigoEstado,
+                    new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, "Nombre",
+                htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombre,
+                    new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pais, "País",
+                htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Pais,
+                    new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+
+                <input type="submit"
+                       value="Agregar"
+                       class="btn btn-primary" />
+
+                @Html.ActionLink(
+                    "Volver",
+                    "Listado",
+                    null,
+                    new { @class = "btn btn-default" }
+                )
+
+            </div>
+        </div>
+
+    </div>
+}

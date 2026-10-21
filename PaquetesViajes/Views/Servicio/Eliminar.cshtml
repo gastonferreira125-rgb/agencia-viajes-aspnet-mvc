@@ -1,0 +1,61 @@
+﻿@model EntidadesCompartidas.Servicio
+
+<h2>Eliminar Servicio</h2>
+
+<p> @ViewBag.Mensaje </p> 
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+
+<h3>¿Esta seguro de querer eliminar el servicio?</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroOmnibus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroOmnibus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraPartida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraPartida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraLlegada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraLlegada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioPasajeIndividual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioPasajeIndividual)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.NumeroOmnibus)<!--esto lo pongo xq como estas partes de la clave compuesta arriba se muestran de solo lectura con el displayfor
+                                                         ninguno de esos datos viaja al servidor sin estos hidenfor
+                                                         y en el controlador de servicio en el post de eliminar necesita a ambos parapoder armar el obj completo para llamar al sp-->
+        @Html.HiddenFor(model => model.FechaHoraPartida)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+        </div>
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿@model EntidadesCompartidas.Servicio
+
+<h2>Consultar Servicio</h2>
+<p> @ViewBag.Mensaje </p>  
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroOmnibus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroOmnibus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraPartida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraPartida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraLlegada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraLlegada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioPasajeIndividual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioPasajeIndividual)
+        </dd>
+
+    </dl>
+</div>

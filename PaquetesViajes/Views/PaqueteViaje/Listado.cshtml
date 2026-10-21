@@ -1,0 +1,85 @@
+﻿@model IEnumerable<EntidadesCompartidas.PaqueteViaje>
+
+<h2>Paquetes de Viaje Disponibles</h2>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Mensaje
+    </div>
+}
+
+<p>
+    @Html.ActionLink(
+        "Nuevo Paquete",
+        "Agregar",
+        null,
+        new { @class = "btn btn-primary" }
+    )
+</p>
+
+<table class="table table-striped table-hover">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadDias)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioIndividual)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioDoble)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioTriple)
+        </th>
+
+        <th>
+            Acciones
+        </th>
+    </tr>
+
+    @foreach (EntidadesCompartidas.PaqueteViaje unP in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => unP.Titulo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => unP.CantidadDias)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => unP.PrecioIndividual)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => unP.PrecioDoble)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => unP.PrecioTriple)
+            </td>
+
+            <td>
+                @Html.ActionLink(
+                    "Ver Completo",
+                    "Consultar",
+                    new { pIdPaquete = unP.Codigo },
+                    new { @class = "btn btn-default btn-sm" }
+                )
+            </td>
+
+        </tr>
+    }
+
+</table>

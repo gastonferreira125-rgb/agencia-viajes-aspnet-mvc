@@ -1,0 +1,356 @@
+﻿body {
+    padding-top: 75px;
+    padding-bottom: 30px;
+    /* Fondo inspirado en cielo, mar y naturaleza */
+    background: linear-gradient( 135deg, #dceef7 0%, #edf7fb 55%, #e4f2ed 100% );
+    min-height: 100vh;
+}
+
+
+/* Contenedor principal */
+
+.body-content {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.96);
+    border-radius: 12px;
+    min-height: 500px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Barra superior */
+
+.navbar-inverse {
+    background-color: #174a63;
+    border-color: #174a63;
+}
+
+
+    /* Nombre de la aplicación */
+
+    .navbar-inverse .navbar-brand {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+
+        /* Nombre al pasar el mouse */
+
+        .navbar-inverse .navbar-brand:hover {
+            color: #ffffff;
+        }
+
+
+    /* Links del menú */
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #e8f3f7;
+    }
+
+
+        /* Links del menú al pasar el mouse */
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #ffffff;
+            background-color: #216582;
+        }
+
+
+    /* Botón hamburguesa en pantallas pequeñas */
+
+    .navbar-inverse .navbar-toggle {
+        border-color: #ffffff;
+    }
+
+        .navbar-inverse .navbar-toggle:hover,
+        .navbar-inverse .navbar-toggle:focus {
+            background-color: #216582;
+        }
+
+        .navbar-inverse .navbar-toggle .icon-bar {
+            background-color: #ffffff;
+        }
+
+
+/* Títulos */
+
+h1,
+h2,
+h3,
+h4 {
+    color: #174a63;
+}
+
+
+/* Tablas */
+
+.table {
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+
+    /* Encabezados de tabla */
+
+    .table > thead > tr > th,
+    .table > tbody > tr:first-child > th {
+        background-color: #dceef7;
+        color: #174a63;
+        border-bottom: 2px solid #c6dfe9;
+    }
+
+
+/* Filas al pasar el mouse */
+
+.table-hover > tbody > tr:hover {
+    background-color: #f1f8fb;
+}
+
+
+/* Links */
+
+a {
+    color: #1f6f94;
+}
+
+    a:hover,
+    a:focus {
+        color: #174a63;
+    }
+
+
+/* Formularios */
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/* Inputs */
+
+.form-control:focus {
+    border-color: #4c94b3;
+    box-shadow: 0 0 5px rgba(76, 148, 179, 0.35);
+}
+
+
+/* Botón principal */
+
+.btn-primary {
+    background-color: #1f6f94;
+    border-color: #1f6f94;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: #174a63;
+        border-color: #174a63;
+    }
+
+
+/* Mensajes de error */
+
+.alert-danger {
+    margin-top: 15px;
+}
+
+
+/* Línea divisoria */
+
+hr {
+    border-top: 1px solid #dbe5ea;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 15px;
+    text-align: center;
+    color: #666666;
+}
+
+
+/* =========================================
+   MEJORAS RESPONSIVE - AGENCIA DE VIAJES
+   ========================================= */
+
+/* Mejoras generales */
+body {
+    padding-top: 70px;
+}
+
+.body-content {
+    padding-bottom: 30px;
+}
+
+/* Navegación */
+.navbar {
+    border: none;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Formularios */
+.form-control {
+    max-width: 100%;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+/* Tablas */
+.table {
+    width: 100%;
+}
+
+    .table th {
+        vertical-align: middle;
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+
+/* Adaptación para celulares */
+@media (max-width: 767px) {
+
+    body {
+        padding-top: 65px;
+    }
+
+    .body-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 21px;
+    }
+
+    /* Menú hamburguesa */
+    .navbar-collapse {
+        max-height: 75vh;
+        overflow-y: auto;
+    }
+
+    .navbar-nav {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+        .navbar-nav > li > a {
+            padding: 12px 15px;
+        }
+
+    /* Tablas desplazables horizontalmente */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+        .table-responsive .table {
+            margin-bottom: 0;
+        }
+
+    .table th,
+    .table td {
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 8px !important;
+    }
+
+    /* Botones y enlaces */
+    .btn {
+        margin-bottom: 5px;
+    }
+
+    /* Pie de página */
+    footer {
+        text-align: center;
+        font-size: 13px;
+    }
+}
+
+
+/* Listados del sistema */
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+    .table-responsive .table {
+        margin-bottom: 0;
+    }
+
+    .table-responsive .dropdown {
+        position: static;
+    }
+
+/* Evita que el menú quede recortado por el contenedor */
+.table-responsive {
+    overflow: visible;
+}
+
+.table th {
+    font-weight: 600;
+    vertical-align: middle !important;
+}
+
+.table td {
+    vertical-align: middle !important;
+}
+
+.table .dropdown-menu {
+    min-width: 180px;
+}
+
+    .table .dropdown-menu > li > a {
+        padding: 9px 16px;
+    }
+
+@media (max-width: 767px) {
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table {
+        min-width: 540px;
+    }
+
+        .table th,
+        .table td {
+            padding: 10px !important;
+            font-size: 13px;
+        }
+
+        .table .btn {
+            margin-bottom: 0;
+        }
+
+        .table .dropdown-menu {
+            min-width: 170px;
+        }
+}
+

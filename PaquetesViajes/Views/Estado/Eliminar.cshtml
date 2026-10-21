@@ -1,0 +1,53 @@
+﻿@model EntidadesCompartidas.Estado
+
+<h2>Eliminar Estado</h2>
+
+<p> @ViewBag.Mensaje </p> 
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+<h3>Seguro que desea eliminar el Estado?</h3>
+
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoEstado) <!-- muestra el nomb de la prop -->
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoEstado) <!--muestra el contenido de la prop -->
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+    </dl>
+
+    <!--esto es para postear la vista y para que tenga accion necesito  la parte dinamica por eso
+        tengo un control html que postea dentro del using -->
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.CodigoEstado)
+        <!-- lo neesito para que el cod viaje al post ya que arriba solo se muestracon el dysplayfor -->
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+        </div>
+    }
+</div>

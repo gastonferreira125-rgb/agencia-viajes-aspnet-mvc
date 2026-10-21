@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EntidadesCompartidas.Hospedaje>
+
+
+<h2>Hospedajes del Estado</h2>
+
+<p> @ViewBag.Mensaje </p>  <!-- muestro mensajes de error si hay -->
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+<!--enrutamiento a la accion de listado del CRUD - es como un salir de aca sin hacer nada-->
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoInterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoHospedaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioPorNoche)
+        </th>
+    </tr>
+
+    @foreach (EntidadesCompartidas.Hospedaje unH in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => unH.CodigoInterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unH.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unH.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unH.TipoHospedaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unH.PrecioPorNoche)
+            </td>
+        </tr>
+    }
+
+</table>

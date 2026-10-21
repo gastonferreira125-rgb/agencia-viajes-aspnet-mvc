@@ -1,0 +1,123 @@
+﻿@model EntidadesCompartidas.PaqueteViaje
+
+<h2>Consultar paquete de viaje</h2>
+
+<p> @ViewBag.Mensaje </p> 
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadDias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadDias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioIndividual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioIndividual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioDoble)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioDoble)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioTriple)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioTriple)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadNoches)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadNoches)
+        </dd>
+
+        <!-- aca lo mismo que antes lo pongo a mano xq el estado es un objeto aparte por eso no lo agrra solo  -->
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Nombre)
+        </dd>
+
+    </dl>
+
+    <!-- de servicios y hospedajes tenemosque mostrar todos sus datos por eso van enteros -->
+    <h4>Datos del Servicio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Numero de omnibus</dt>
+        <dd>@Model.Servicio.NumeroOmnibus</dd><!--no pongo los display como en estado xq son varios datos de un obj asociado en lugar de eso etiquetas de texto fijo-->
+        
+        <dt>Fecha y hora de partida</dt>
+        <dd>@Model.Servicio.FechaHoraPartida</dd>
+
+        <dt>Fecha y hora de llegada</dt>
+        <dd>@Model.Servicio.FechaHoraLlegada</dd>
+
+        <dt>Precio del pasaje individual</dt>
+        <dd>@Model.Servicio.PrecioPasajeIndividual</dd>
+    </dl>
+
+    <h4>Datos del Hospedaje</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Codigo Interno</dt>
+        <dd>@Model.Hospedaje.CodigoInterno</dd>
+
+        <dt>Nombre</dt>
+        <dd>@Model.Hospedaje.Nombre</dd>
+
+        <dt>Direccion</dt>
+        <dd>@Model.Hospedaje.Direccion</dd>
+
+
+        <dt>Tipo de Hospedaje</dt>
+        <dd>@Model.Hospedaje.TipoHospedaje</dd>
+
+        <dt>Precio por Noche</dt>
+        <dd>@Model.Hospedaje.PrecioPorNoche</dd>
+    </dl>
+</div>

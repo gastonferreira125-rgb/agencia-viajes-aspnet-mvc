@@ -1,0 +1,65 @@
+﻿@model EntidadesCompartidas.Hospedaje
+
+
+<h2>Consultar Hospedaje </h2>
+
+
+
+<p> @ViewBag.Mensaje </p>  
+
+<p> @Html.ActionLink("Volver", "Listado") </p>
+
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoInterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoInterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoHospedaje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoHospedaje)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioPorNoche)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioPorNoche)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)<!--aunque sea un objeto lo hago asi xq busca el nombre d ela prop no el valor-->
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Nombre)<!--aca si devuelve el valor osea es exactamente la dif entre displaynamefor y displayfor-->
+        </dd>
+
+    </dl>
+</div>

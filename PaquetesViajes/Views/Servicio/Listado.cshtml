@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EntidadesCompartidas.Servicio>
+<h2>Listado de Servicios</h2>
+
+<p> @ViewBag.Mensaje </p> 
+
+<p> @Html.ActionLink("Nuevo", "Agregar") </p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroOmnibus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraPartida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraLlegada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioPasajeIndividual)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (EntidadesCompartidas.Servicio unS in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => unS.NumeroOmnibus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unS.FechaHoraPartida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unS.FechaHoraLlegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => unS.PrecioPasajeIndividual)
+            </td>
+            <td>
+                @Html.ActionLink("Consultar", "Consultar", new { pNumeroOmnibus = unS.NumeroOmnibus, pFechaHoraPartida = unS.FechaHoraPartida })<!--en estos actionlink se mandan dos valores de ruta xq el controlador de servicios necesita ambos para justamente identificar un servicio nose si se entiende igual cuando nos juntamos lo vemos-->
+                @Html.ActionLink("Modificar", "Modificar", new { pNumeroOmnibus = unS.NumeroOmnibus, pFechaHoraPartida = unS.FechaHoraPartida })
+                @Html.ActionLink("Eliminar", "Eliminar", new { pNumeroOmnibus = unS.NumeroOmnibus, pFechaHoraPartida = unS.FechaHoraPartida })
+                @Html.ActionLink("Paquetes", "PaquetesPorServicio", "PaqueteViaje", new{pNumeroOmnibus = unS.NumeroOmnibus, pFechaHoraPartida = unS.FechaHoraPartida}, null)
+            </td>
+        </tr>
+    }
+
+</table>
